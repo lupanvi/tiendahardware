@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_Ventas" Class="VentaDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS-VAIO\SQLEXPRESS;Initial Catalog=BD_Ventas;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BD_VentasConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TB_Almacen" Member="TB_Almacens">
+    <Type Name="TB_Almacen">
+      <Column Name="Pk_eAlmacen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cSucursal" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="cDireccion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_Almacen_TB_Stock" Member="TB_Stocks" ThisKey="Pk_eAlmacen" OtherKey="Fk_eAlmacen" Type="TB_Stock" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Usuario" Member="TB_Usuarios">
+    <Type Name="TB_Usuario">
+      <Column Name="Pk_eUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cUsuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cContrasena" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dFecRegistro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TB_Cliente_TB_Usuario" Member="TB_Cliente" ThisKey="Fk_eCliente" OtherKey="Pk_eCliente" Type="TB_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Cliente" Member="TB_Clientes">
+    <Type Name="TB_Cliente">
+      <Column Name="Pk_eCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cTelefono" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="cDireccion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cTipCliente" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="dFecRegistro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TB_Cliente_TB_Usuario" Member="TB_Usuarios" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_Usuario" />
+      <Association Name="TB_Cliente_TB_PersonaJuridica" Member="TB_PersonaJuridicas" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_PersonaJuridica" />
+      <Association Name="TB_Cliente_TB_PersonaNatural" Member="TB_PersonaNaturals" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_PersonaNatural" />
+      <Association Name="TB_Cliente_TB_Pedido" Member="TB_Pedido" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_Pedido" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Dominio" Member="TB_Dominios">
+    <Type Name="TB_Dominio">
+      <Column Name="Pk_eDominio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cTipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cDescripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_Dominio_TB_Producto" Member="TB_Productos" ThisKey="Pk_eDominio" OtherKey="Fk_eDominio" Type="TB_Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_PersonaJuridica" Member="TB_PersonaJuridicas">
+    <Type Name="TB_PersonaJuridica">
+      <Column Name="Pk_ePerJuridica" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cRuc" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="cRazSocial" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_Cliente_TB_PersonaJuridica" Member="TB_Cliente" ThisKey="Fk_eCliente" OtherKey="Pk_eCliente" Type="TB_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_PersonaNatural" Member="TB_PersonaNaturals">
+    <Type Name="TB_PersonaNatural">
+      <Column Name="Pk_ePerNatural" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cDNI" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="cNombres" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="cApellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TB_Cliente_TB_PersonaNatural" Member="TB_Cliente" ThisKey="Fk_eCliente" OtherKey="Pk_eCliente" Type="TB_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Producto" Member="TB_Productos">
+    <Type Name="TB_Producto">
+      <Column Name="Pk_eProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eDominio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cDescripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dPrecio" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="cEspecificacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="bImagen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TB_Producto_TB_Stock" Member="TB_Stocks" ThisKey="Pk_eProducto" OtherKey="Fk_eProducto" Type="TB_Stock" />
+      <Association Name="TB_Producto_TB_DetallePedido" Member="TB_DetallePedido" ThisKey="Pk_eProducto" OtherKey="Fk_eProducto" Type="TB_DetallePedido" />
+      <Association Name="TB_Dominio_TB_Producto" Member="TB_Dominio" ThisKey="Fk_eDominio" OtherKey="Pk_eDominio" Type="TB_Dominio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Stock" Member="TB_Stocks">
+    <Type Name="TB_Stock">
+      <Column Name="Pk_eStock" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_eAlmacen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eStockActual" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eStockMinimo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="TB_Almacen_TB_Stock" Member="TB_Almacen" ThisKey="Fk_eAlmacen" OtherKey="Pk_eAlmacen" Type="TB_Almacen" IsForeignKey="true" />
+      <Association Name="TB_Producto_TB_Stock" Member="TB_Producto" ThisKey="Fk_eProducto" OtherKey="Pk_eProducto" Type="TB_Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_Pedido" Member="TB_Pedido">
+    <Type Name="TB_Pedido">
+      <Column Name="Pk_ePedido" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_eCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fFechaRegistro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cDestinatario" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="mTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="cNumTarjeta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="eCodTarjeta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cTipoPago" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="cNroTransaccion" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Association Name="TB_Pedido_TB_DetallePedido" Member="TB_DetallePedido" ThisKey="Pk_ePedido" OtherKey="Fk_ePedido" Type="TB_DetallePedido" />
+      <Association Name="TB_Cliente_TB_Pedido" Member="TB_Cliente" ThisKey="Fk_eCliente" OtherKey="Pk_eCliente" Type="TB_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TB_DetallePedido" Member="TB_DetallePedido">
+    <Type Name="TB_DetallePedido">
+      <Column Name="Pk_eDetalePedido" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fk_ePedido" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_eProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eCantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mSuTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="TB_Pedido_TB_DetallePedido" Member="TB_Pedido" ThisKey="Fk_ePedido" OtherKey="Pk_ePedido" Type="TB_Pedido" IsForeignKey="true" />
+      <Association Name="TB_Producto_TB_DetallePedido" Member="TB_Producto" ThisKey="Fk_eProducto" OtherKey="Pk_eProducto" Type="TB_Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

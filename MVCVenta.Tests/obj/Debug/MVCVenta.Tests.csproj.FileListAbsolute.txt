@@ -1,0 +1,40 @@
+d:\upc\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+d:\upc\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+d:\upc\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+d:\upc\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+d:\upc\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+d:\upc\MVCVenta\MVCVenta.Tests\obj\Debug\ResolveAssemblyReference.cache
+d:\upc\MVCVenta\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+d:\upc\MVCVenta\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
+F:\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+F:\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+F:\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+F:\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+F:\MVCVenta\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+F:\MVCVenta\MVCVenta.Tests\obj\Debug\ResolveAssemblyReference.cache
+F:\MVCVenta\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+F:\MVCVenta\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
+F:\Centralizado\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+F:\Centralizado\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+F:\Centralizado\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+F:\Centralizado\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+F:\Centralizado\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+F:\Centralizado\tiendahardware\MVCVenta.Tests\obj\Debug\ResolveAssemblyReference.cache
+F:\Centralizado\tiendahardware\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+F:\Centralizado\tiendahardware\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\obj\Debug\ResolveAssemblyReference.cache
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+F:\Centralizado\tiendahardware-1\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.csprojResolveAssemblyReference.cache
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb

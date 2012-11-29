@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCVenta</RootNamespace>
+    <AssemblyName>MVCVenta</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarritoComprasController.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\VentaDataClasses.cs">
+      <DependentUpon>VentaDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VentaDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentaDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WsBanco\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\CarritoCompra.cs" />
+    <Compile Include="ViewModels\Dominio.cs" />
+    <Compile Include="ViewModels\ProductoList.cs" />
+    <Compile Include="ViewModels\Transaccion.cs" />
+    <Compile Include="ViewModels\Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\script.js" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\Validaciones.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Imagenes\active_bg.png" />
+    <Content Include="Imagenes\afterlogo.jpg" />
+    <Content Include="Imagenes\banner.jpg" />
+    <Content Include="Imagenes\category.jpg" />
+    <Content Include="Imagenes\close.gif" />
+    <Content Include="Imagenes\divider.png" />
+    <Content Include="Imagenes\footer.jpg" />
+    <Content Include="Imagenes\hard.jpg" />
+    <Content Include="Imagenes\header.jpg" />
+    <Content Include="Imagenes\logo.jpg" />
+    <Content Include="Imagenes\menu.jpg" />
+    <Content Include="Imagenes\menu_beforelogo.jpg" />
+    <Content Include="Imagenes\newtovar.jpg" />
+    <Content Include="Imagenes\op.jpg" />
+    <Content Include="Imagenes\panel.jpg" />
+    <Content Include="Imagenes\pic_bg.png" />
+    <Content Include="Imagenes\popular.jpg" />
+    <Content Include="Imagenes\Productos\1.png" />
+    <Content Include="Imagenes\Productos\10.png" />
+    <Content Include="Imagenes\Productos\11.png" />
+    <Content Include="Imagenes\Productos\12.png" />
+    <Content Include="Imagenes\Productos\13.png" />
+    <Content Include="Imagenes\Productos\14.png" />
+    <Content Include="Imagenes\Productos\15.png" />
+    <Content Include="Imagenes\Productos\16.png" />
+    <Content Include="Imagenes\Productos\17.png" />
+    <Content Include="Imagenes\Productos\18.png" />
+    <Content Include="Imagenes\Productos\19.png" />
+    <Content Include="Imagenes\Productos\2.png" />
+    <Content Include="Imagenes\Productos\20.png" />
+    <Content Include="Imagenes\Productos\21.png" />
+    <Content Include="Imagenes\Productos\22.png" />
+    <Content Include="Imagenes\Productos\23.png" />
+    <Content Include="Imagenes\Productos\24.png" />
+    <Content Include="Imagenes\Productos\25.png" />
+    <Content Include="Imagenes\Productos\26.png" />
+    <Content Include="Imagenes\Productos\27.png" />
+    <Content Include="Imagenes\Productos\28.png" />
+    <Content Include="Imagenes\Productos\29.png" />
+    <Content Include="Imagenes\Productos\3.png" />
+    <Content Include="Imagenes\Productos\30.png" />
+    <Content Include="Imagenes\Productos\31.png" />
+    <Content Include="Imagenes\Productos\32.png" />
+    <Content Include="Imagenes\Productos\33.png" />
+    <Content Include="Imagenes\Productos\34.png" />
+    <Content Include="Imagenes\Productos\35.png" />
+    <Content Include="Imagenes\Productos\36.png" />
+    <Content Include="Imagenes\Productos\37.png" />
+    <Content Include="Imagenes\Productos\38.png" />
+    <Content Include="Imagenes\Productos\39.png" />
+    <Content Include="Imagenes\Productos\4.png" />
+    <Content Include="Imagenes\Productos\40.png" />
+    <Content Include="Imagenes\Productos\46.png" />
+    <Content Include="Imagenes\Productos\47.png" />
+    <Content Include="Imagenes\Productos\5.png" />
+    <Content Include="Imagenes\Productos\6.png" />
+    <Content Include="Imagenes\Productos\7.png" />
+    <Content Include="Imagenes\Productos\8.png" />
+    <Content Include="Imagenes\Productos\9.png" />
+    <Content Include="Imagenes\sample_slides\imac.jpg" />
+    <Content Include="Imagenes\sample_slides\info.jpg" />
+    <Content Include="Imagenes\sample_slides\iphone.jpg" />
+    <Content Include="Imagenes\sample_slides\macbook.jpg" />
+    <Content Include="Imagenes\sample_slides\thumb_about.png" />
+    <Content Include="Imagenes\sample_slides\thumb_imac.png" />
+    <Content Include="Imagenes\sample_slides\thumb_iphone.png" />
+    <Content Include="Imagenes\sample_slides\thumb_macbook.png" />
+    <Content Include="Imagenes\spacer.gif" />
+    <Content Include="Imagenes\taling.jpg" />
+    <Content Include="Imagenes\taling_center.jpg" />
+    <Content Include="Imagenes\tarjetas.jpg" />
+    <Content Include="Imagenes\trash.jpg" />
+    <None Include="Service References\WsBanco\configuration91.svcinfo" />
+    <None Include="Service References\WsBanco\configuration.svcinfo" />
+    <None Include="Service References\WsBanco\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\CarritoCompras\Index.aspx" />
+    <Content Include="Views\CarritoCompras\RealizarCompra.aspx" />
+    <Content Include="Views\Compra\Index.aspx" />
+    <Content Include="Views\Producto\Create.aspx" />
+    <Content Include="Views\Producto\Details.aspx" />
+    <Content Include="Views\Producto\Index.aspx" />
+    <Content Include="Imagenes\Logo-tienda-de-hardware.png" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\VentaDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>VentaDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WsBanco\NroCuentaService.wsdl" />
+    <None Include="Service References\WsBanco\NroCuentaServiceImplService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\VentaDataClasses.dbml.layout">
+      <DependentUpon>VentaDataClasses.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WsBanco\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>24008</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

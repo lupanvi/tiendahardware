@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCVenta", "MVCVenta\MVCVenta.csproj", "{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCVenta.Tests", "MVCVenta.Tests\MVCVenta.Tests.csproj", "{082463C8-DE54-4425-980C-6CA548A936F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65CB3B0C-DFD5-4818-AB05-DFF7374D9D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{082463C8-DE54-4425-980C-6CA548A936F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{082463C8-DE54-4425-980C-6CA548A936F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{082463C8-DE54-4425-980C-6CA548A936F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{082463C8-DE54-4425-980C-6CA548A936F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
