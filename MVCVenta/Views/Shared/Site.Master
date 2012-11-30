@@ -17,29 +17,25 @@
 <script type='text/javascript' src='../../Content/jquery.jqzoom-core.js'></script>  
 
 
+<link type='text/css' rel='stylesheet' href='../../Content/liquidcarousel.css' />
+	
+	<script type="text/javascript" src="../../Content/jquery.liquidcarousel.pack.js"></script>
+	<script type="text/javascript">
+	<!--
+	    $(document).ready(function () {
+	        $('#liquid1').liquidcarousel({ height: 129, duration: 100, hidearrows: false });
+	    });
+	-->
+	</script>
+
+
+
+
 <%--<script src="../../Content/Validaciones.js" type="text/javascript"></script>--%>
 <script type="text/javascript">
-//    $(document).ready(function () {
-
-//       
-
-////        $('input[datatype=numeric]').keypress(function (event) {
-////            if (event.keyCode < 47 || event.keyCode > 58) { event.preventDefault(); }
-////        });
-
-//            // bind the recalc function to the quantity fields
-//            $("input[name^=txtCantProducto]").bind("keyup", recalc);
-//            // run the calculation function now
-//         recalc();
-
-
-    //     });
 
     $(document).ready(function () {
-        $('input.precio').bind('keyup', function () {
-            $('span.total').html($('input.precio').sumValues());
 
-        });
 
         var options = {
             zoomType: 'standard',
@@ -54,9 +50,16 @@
             //...MORE OPTIONS  
         };
 
-
-        $('.zoom').jqzoom(options  
+        $('.zoom').jqzoom(options
         );
+
+
+        $('input.precio').bind('keyup', function () {
+            $('span.total').html($('input.precio').sumValues());
+
+        });       
+       
+
 
     });
 
@@ -75,6 +78,8 @@
      };
 
 </script>
+
+
 
 <!--[if lte IE 7]>
 <style type="text/css">
@@ -114,18 +119,7 @@ ul li{
 							<table width="100%"  border="0" cellspacing="0" cellpadding="0">
 								<tr>
 								  <td width="60%" height="66" align="left" valign="top">
-										  <table width="597"  border="0" cellspacing="0" cellpadding="0">
-											<tr>
-											  <td><img src="../../Imagenes/afterlogo.jpg" width="597" height="38"></td>
-											</tr>
-											<tr>
-											  <td height="28" class="slide">
-													  
-
-
-											  </td>
-											</tr>
-										  </table>
+										 
 								  </td>
 								  <td width="40%">
 										  <table width="399"  border="0" cellspacing="0" cellpadding="0">
@@ -141,28 +135,24 @@ ul li{
 							</table>
 							<table width="996"  border="0" cellspacing="0" cellpadding="0">
 								<tr>
-								  <td>
+								  <td>                                                                 
 
-                                  
-
-                                  <div id="gallery">	
-                                    <div id="slides">    
-                                    <div class="slide"><img src="../../Imagenes/sample_slides/macbook.jpg" width="920" height="400" alt="side" /></div>
-                                    <div class="slide"><img src="../../Imagenes/sample_slides/iphone.jpg" width="920" height="400" alt="side" /></div>
-                                    <div class="slide"><img src="../../Imagenes/sample_slides/imac.jpg" width="920" height="400" alt="side" /></div>
-                                    <div class="slide"><a href="#" target="_blank"><img src="../../Imagenes/sample_slides/info.jpg" width="920" height="400" alt="side" /></a></div>      
-                                    </div>
-                                   <div id="menu">
-    
+                                    <div id="liquid1" class="liquid">
+                                    <span class="previous"></span>
+                                    <div class="wrapper">
                                     <ul>
-                                        <li class="fbar">&nbsp;</li><li class="menuItem"><a href=""><img src="../../Imagenes/sample_slides/thumb_macbook.png" alt="thumbnail" /></a></li><li class="menuItem"><a href=""><img src="../../Imagenes/sample_slides/thumb_iphone.png" alt="thumbnail" /></a></li><li class="menuItem"><a href=""><img src="../../Imagenes/sample_slides/thumb_imac.png" alt="thumbnail" /></a></li><li class="menuItem"><a href=""><img src="../../Imagenes/sample_slides/thumb_about.png" alt="thumbnail" /></a></li>
+
+                                    <li><a href="/Producto/Details/2"><img src="../../Imagenes/Productos/2.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/3"><img src="../../Imagenes/Productos/3.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/21"><img src="../../Imagenes/Productos/21.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/4"><img src="../../Imagenes/Productos/4.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/5"><img src="../../Imagenes/Productos/5.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/1"><img src="../../Imagenes/Productos/1.png" width="129" height="129" /></a></li>
+                                    <li><a href="/Producto/Details/6"><img src="../../Imagenes/Productos/6.png" width="129" height="129" /></a></li>
                                     </ul>
-    
-    
-                                    </div>    
-                                  </div>
-
-
+                                    </div>
+                                    <span class="next"></span>
+                                    </div>
                                   
 
                                   </td>

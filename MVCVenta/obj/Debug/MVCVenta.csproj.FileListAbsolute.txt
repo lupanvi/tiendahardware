@@ -23,3 +23,6 @@ D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Comp
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta\obj\Debug\MVCVenta.csprojResolveAssemblyReference.cache
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta\obj\Debug\MVCVenta.dll
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta\obj\Debug\MVCVenta.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta\obj\Debug\MVCVenta.csprojResolveAssemblyReference.cache
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta\obj\Debug\MVCVenta.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta\obj\Debug\MVCVenta.pdb

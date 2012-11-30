@@ -7,6 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
         <br />
+        <br />
+        <br />
     <table width="40%">
         <tr>
             <td>
@@ -30,6 +32,16 @@
             </td>
         </tr>
     </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
 </asp:Content>
 

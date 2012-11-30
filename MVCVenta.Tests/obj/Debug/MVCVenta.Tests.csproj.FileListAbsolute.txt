@@ -38,3 +38,11 @@ D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Comp
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.csprojResolveAssemblyReference.cache
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
 D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\Carrito de Compras\Carrito de Compras\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll.config
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.Tests.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\bin\Debug\MVCVenta.pdb
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.csprojResolveAssemblyReference.cache
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.dll
+D:\UPC\7-CICLO\SISTEMAS-DISTRIBUIDOS\PROYECTO\tiendahardware\MVCVenta.Tests\obj\Debug\MVCVenta.Tests.pdb
