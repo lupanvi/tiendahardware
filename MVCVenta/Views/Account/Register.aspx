@@ -10,11 +10,11 @@
         Use el formulario de abajo para crear una nueva cuenta. 
     </p>
     <p>
-        Passwords are required to be a minimum of <%: ViewData["PasswordLength"] %> characters in length.
+        La cantidad minima de caracteres para la clave es de <%: ViewData["PasswordLength"] %> characters .
     </p>
 
     <% using (Html.BeginForm()) { %>
-        <%: Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.") %>
+        <%: Html.ValidationSummary(true, "La creación de la cuenta no fue satisfactoria. Por favor corregir los errores y tratar otra vez.") %>
         <div>
             <fieldset id="Contenedor">
                 <legend>Información de cuenta</legend>
@@ -27,7 +27,38 @@
                     <%: Html.ValidationMessageFor(m => m.Telefono)%>
                 </div>
 
-                 <div class="editor-label">
+
+                <div class="editor-label">
+                    Departamento
+                </div>
+                <div class="editor-label">
+                    <%= Html.DropDownListFor(model => model.codDepartamento, (IEnumerable<SelectListItem>)ViewData["Departamentos"], new { onchange = "this.form.action = '/Account/ListarCombo'; this.form.submit(); " })%>
+                    <%: Html.ValidationMessageFor(model => model.codDepartamento)%>
+                </div>
+                <div class="editor-label">
+                    Provincia
+                </div>
+                <div class="editor-label">
+                    <% if (ViewData["Provincias"] != null)
+                    {%>
+                    <%= Html.DropDownListFor(model => model.codProvincia, (IEnumerable<SelectListItem>)ViewData["Provincias"], new { onchange = "this.form.action = '/Account/ListarCombo'; this.form.submit(); " })%>
+                    <%: Html.ValidationMessageFor(model => model.codProvincia)%>
+                    <%}%>
+                </div>
+                <div class="editor-label">
+                    Distrito
+                </div>
+                <div class="editor-label">
+                    <% if (ViewData["Distritos"] != null)
+                    {%>
+                    <%= Html.DropDownListFor(model => model.codDistrito, (IEnumerable<SelectListItem>)ViewData["Distritos"])%>
+                    <%: Html.ValidationMessageFor(model => model.codDistrito)%>
+                    <%}%>
+                </div>
+
+
+
+                <div class="editor-label">
                     <%: Html.LabelFor(m => m.Direccion) %>
                 </div>
                 <div class="editor-field">
@@ -38,13 +69,8 @@
                    <div class="editor-label">
                     <%: Html.LabelFor(m => m.TipoCliente) %>
                 </div>
-             <%--   <div class="editor-field">
-                    <%: Html.TextBoxFor(m => m.TipoCliente)%>
-                    <%: Html.ValidationMessageFor(m => m.TipoCliente)%>
-                </div>--%>
-
-
-              <%--  <%= Html.DropDownList("qchap", new SelectList( (IEnumerable)ViewData["qchap"], "Id", "Title" ), new { onchange = "this.form.action = 'someAnotherUrl'; this.form.submit();" }) %>--%>
+             
+             
                 <div id="Combo">
                     <select id='dropDownTipoCliente' name='dropDownTipoCliente' style="width: 150px">
                         <option value="1" selected="selected">Natural</option>
@@ -138,49 +164,17 @@
     var id_div_natural = $('#Natural');
     var id_div_juridico = $('#Juridico');
     $(document).ready(function () {
-        //        $('#Natural').css('visibility', 'visible');
-        // $('#Juridico').css('visibility', 'hidden');
-       // $('#Juridico').remove();
     });
 
     $('#dropDownTipoCliente').change(function () {
-        //        var id_div_natural = $('#Natural');
-        //        var id_div_juridico = $('#Juridico');
-        if ($(this).find("option:selected").text() == "Natural") {
-            //              $('#Natural').css('visibility', 'visible');
-            //              $('#Juridico').css('visibility', 'hidden');
-            //$('#Natural').append();
-            //$('#Contenedor').append($('#Natural'));
-             $(this).parent().append(id_div_natural);
-           // $("Combo").after(id_div_natural);
-          //  $(this).parent().append(id_div_juridico);
-           // $('#Juridico').css('visibility', 'hidden');
-          //  $("Combo").after(id_div_natural);
-          //  $('#Juridico').detach();
-
-           // $(this).parent().remove(id_div_juridico);
-
+            if ($(this).find("option:selected").text() == "Natural") {
+                  $(this).parent().append(id_div_natural);
              $('#Juridico').remove();
-            //id_div_juridico.remove();
-            //id_div_juridico.remove();
-        } else {
-            //              $('#Natural').css('visibility', 'hidden');
-            //              $('#Juridico').css('visibility', 'visible');
-            //$('#Juridico').append();
-            // $('#Contenedor').append($('#Juridico'));
-            //$(this).parent().append($('#Juridico'));
+            } else {
+      
             $(this).parent().append(id_div_juridico);
-           // $("Combo").after(id_div_juridico);
-         //   $(this).parent().append(id_div_natural);
-           // $('#Natural').css('visibility', 'hidden');
-          //  $("Combo").after(id_div_juridico);
-            // $('#Natural').detach();
-          //  var span = $('#Natural').detach();
-
-
-         //   $(this).parent().remove(id_div_natural);
              $('#Natural').remove();
-           // id_div_natural.remove();
+           
         }
     });
 </script>

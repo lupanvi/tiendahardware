@@ -28,11 +28,22 @@ namespace MVCVenta.Controllers
 
         public ActionResult Index()
         {
-                List<CarritoCompra> listaCarritoCompras = null;
-  listaCarritoCompras = (List<CarritoCompra>)Session["Carrito"];
+            List<CarritoCompra> listaCarritoCompras = null;
+            listaCarritoCompras = (List<CarritoCompra>)Session["Carrito"];
             Decimal dMonto = listaCarritoCompras.Sum(P => P.TotalProducto);
-             
+            Decimal dCostoEnvio=0 ;
 
+            
+            //Verificar si Usuario seleccion Envio de Articulos
+            if (Session["Envio"] != null) { 
+                 EnvioCourier objEnvCourier = new EnvioCourier();
+                 objEnvCourier = (EnvioCourier)Session["Envio"];
+                 dCostoEnvio = objEnvCourier.MontoEnvio;
+                 dMonto = dMonto + dCostoEnvio;
+                 ViewData["CostoEnvio"] = dCostoEnvio;
+            }
+
+            Session["MontoCarritoTotal"] = dMonto;
               ViewData["MontoCarrito"] = dMonto;
             return View();
         }

@@ -17,6 +17,7 @@ namespace MVCVenta.ViewModels
         public decimal Precio { get; set; }
         public string Especificacion { get; set; }
         public string Imagen { get; set; }
+        public decimal Peso { get; set; }
 
         public ProductoList(int id, string dominio, string descripcion, decimal precio, string especificacion, string imagen)
         {

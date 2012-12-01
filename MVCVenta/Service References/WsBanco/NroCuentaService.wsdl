@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://service.com.banco/" name="NroCuentaService" targetNamespace="http://service.com.banco/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:tns="http://service.com.banco/" elementFormDefault="unqualified" targetNamespace="http://service.com.banco/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="obtenerTransaccion" type="tns:obtenerTransaccion" />
+      <xs:element name="obtenerTransaccionResponse" type="tns:obtenerTransaccionResponse" />
+      <xs:complexType name="obtenerTransaccion">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cNroTarjeta" type="xs:string" />
+          <xs:element minOccurs="0" name="cCodTarjeta" type="xs:string" />
+          <xs:element minOccurs="0" name="cTipoCuenta" type="xs:string" />
+          <xs:element name="dMonto" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerTransaccionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="transaccion" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerTransaccionResponse">
+    <wsdl:part name="parameters" element="ns1:obtenerTransaccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerTransaccion">
+    <wsdl:part name="parameters" element="ns1:obtenerTransaccion" />
+  </wsdl:message>
+  <wsdl:portType name="NroCuentaService">
+    <wsdl:operation name="obtenerTransaccion">
+      <wsdl:input name="obtenerTransaccion" message="ns1:obtenerTransaccion" />
+      <wsdl:output name="obtenerTransaccionResponse" message="ns1:obtenerTransaccionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
