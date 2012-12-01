@@ -16,14 +16,14 @@
     <tr>
     <td align="left">
      <div>
-       <%-- <%: Html.ActionLink("Seguir Comprando", "Guardar", "CarritoCompras")%>--%>
+     
         <input id="btnGuardar" name="btnGuardar" type="submit" value="Añadir otro producto" />
     </div>
     </td>
      <td>
      <div>
          <input id="btnCancelar" name="btnCancelar" type="submit" value="Cancelar" />
-       <%-- <%: Html.ActionLink("Cancelar", "Cancelar", "CarritoCompras")%>--%>
+  
     </div>
     </td>
     <td>
@@ -41,9 +41,7 @@
     <br />
 
   
-     <%-- <% using (Html.BeginForm("Guardar", "CarritoCompras", FormMethod.Post))
-       {%>
-            <%: Html.ValidationSummary(true) %>--%>
+    
     <table width="100%" cellpadding="10">
         <tr>
             <th></th>
@@ -80,10 +78,7 @@
             </td>
             <td align="right">
                
-            <%--<div class="editor-field-quantity">
-                <%: Html.TextBoxFor(model => item.CantProducto)%>
-                <%: Html.ValidationMessageFor(model => item.CantProducto)%>
-            </div>--%>
+         
                 <input onkeyup="calcular(this,<%: item.IdProducto %>)" id="txtCantProducto<%: item.IdProducto %>" name="txtCantProducto" class="txtCantProducto" type="text" value="<%: item.CantProducto %>"  style="width: 30px"  maxlength="4"  />
 
             </td>
@@ -136,7 +131,7 @@
                  }
              )
 
-             $('.lbltotal').text(resultVal);
+             $('.lbltotal').text("S/. "+resultVal);
 
 
 

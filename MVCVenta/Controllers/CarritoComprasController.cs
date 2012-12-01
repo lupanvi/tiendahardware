@@ -46,6 +46,7 @@ namespace MVCVenta.Controllers
                     objCarrito.PrecioProducto = productoAgregado.dPrecio;
                     objCarrito.CantProducto = 1;
                     objCarrito.TotalProducto = productoAgregado.dPrecio;
+                    objCarrito.Peso = productoAgregado.dPeso;
                     listaCarritoCompras.Add(objCarrito);
                     Session["Carrito"] = listaCarritoCompras;
                 }
@@ -56,6 +57,7 @@ namespace MVCVenta.Controllers
                     objCarrito.PrecioProducto = productoAgregado.dPrecio;
                     objCarrito.CantProducto = 1;
                     objCarrito.TotalProducto = productoAgregado.dPrecio;
+                    objCarrito.Peso = productoAgregado.dPeso;
                     listaCarritoCompras = new List<CarritoCompra>();
                     listaCarritoCompras.Add(objCarrito);
                     Session["Carrito"] = listaCarritoCompras;
@@ -191,7 +193,11 @@ namespace MVCVenta.Controllers
                     Session["Carrito"] = null;
                     Session["Transaccion"] = objTransaccion;
                     ViewData["Cod.Transaccion"] = objTransaccion.CodigoTransaccion;
-                    ViewData["Message"] = string.Format("La compra se realizo correctamente, El Monto total fue de : {0}", String.Format("{0:c}",dMonto));
+                   // ViewData["Message"] = string.Format("La compra se realizo correctamente, El Monto total fue de : {0}", String.Format("{0:c}",dMonto));
+                    ViewData["Message"] = string.Format("La compra se realizo correctamente, El Monto total fue de : {0}", String.Format("{0:c}", Session["MontoCarritoTotal"]));
+                   
+
+
                 }
                 else
                 {

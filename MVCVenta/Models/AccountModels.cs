@@ -77,6 +77,23 @@ namespace MVCVenta.Models
 
         [Required]
         [DataType(DataType.Text)]
+        [DisplayName("codDepartamento")]
+        public string codDepartamento { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [DisplayName("codProvincia")]
+        public string codProvincia { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [DisplayName("codDistrito")]
+        public string codDistrito { get; set; }
+        
+        
+
+        [Required]
+        [DataType(DataType.Text)]
         [DisplayName("Dirección")]
         public string Direccion { get; set; }
 
