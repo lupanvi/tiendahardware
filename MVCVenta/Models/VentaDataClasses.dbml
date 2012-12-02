@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_Ventas" Class="VentaDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LUIS-VAIO\SQLEXPRESS;Initial Catalog=BD_Ventas;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BD_VentasConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=MININT-LD4KHBK\SQLEXPRESS2008R2;Initial Catalog=BD_Ventas;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BD_VentasConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TB_Almacen" Member="TB_Almacens">
     <Type Name="TB_Almacen">
       <Column Name="Pk_eAlmacen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -25,6 +25,9 @@
       <Column Name="cDireccion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="cTipCliente" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
       <Column Name="dFecRegistro" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codDepartamento" Type="System.String" DbType="VarChar(2) NULL" CanBeNull="false" />
+      <Column Name="codProvincia" Type="System.String" DbType="VarChar(2) NULL" CanBeNull="false" />
+      <Column Name="codDistrito" Type="System.String" DbType="VarChar(2) NULL" CanBeNull="false" />
       <Association Name="TB_Cliente_TB_Usuario" Member="TB_Usuarios" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_Usuario" />
       <Association Name="TB_Cliente_TB_PersonaJuridica" Member="TB_PersonaJuridicas" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_PersonaJuridica" />
       <Association Name="TB_Cliente_TB_PersonaNatural" Member="TB_PersonaNaturals" ThisKey="Pk_eCliente" OtherKey="Fk_eCliente" Type="TB_PersonaNatural" />
@@ -66,6 +69,7 @@
       <Column Name="dPrecio" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="cEspecificacion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="bImagen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dPeso" Type="System.Decimal" DbType="Decimal(18,2)  NULL" CanBeNull="false" />
       <Association Name="TB_Producto_TB_Stock" Member="TB_Stocks" ThisKey="Pk_eProducto" OtherKey="Fk_eProducto" Type="TB_Stock" />
       <Association Name="TB_Producto_TB_DetallePedido" Member="TB_DetallePedido" ThisKey="Pk_eProducto" OtherKey="Fk_eProducto" Type="TB_DetallePedido" />
       <Association Name="TB_Dominio_TB_Producto" Member="TB_Dominio" ThisKey="Fk_eDominio" OtherKey="Pk_eDominio" Type="TB_Dominio" IsForeignKey="true" />
@@ -93,6 +97,10 @@
       <Column Name="eCodTarjeta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="cTipoPago" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Column Name="cNroTransaccion" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cDireccionDestinatario" Type="System.String" DbType="varchar(100) NULL" CanBeNull="false" />
+      <Column Name="codDepartamento" Type="System.String" DbType="varchar(2) NULL" CanBeNull="false" />
+      <Column Name="codProvincia" Type="System.String" DbType="varchar(2) NULL" CanBeNull="false" />
+      <Column Name="codDistrito" Type="System.String" DbType="varchar(2) NULL" CanBeNull="false" />
       <Association Name="TB_Pedido_TB_DetallePedido" Member="TB_DetallePedido" ThisKey="Pk_ePedido" OtherKey="Fk_ePedido" Type="TB_DetallePedido" />
       <Association Name="TB_Cliente_TB_Pedido" Member="TB_Cliente" ThisKey="Fk_eCliente" OtherKey="Pk_eCliente" Type="TB_Cliente" IsForeignKey="true" />
     </Type>
@@ -106,6 +114,16 @@
       <Column Name="mSuTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Association Name="TB_Pedido_TB_DetallePedido" Member="TB_Pedido" ThisKey="Fk_ePedido" OtherKey="Pk_ePedido" Type="TB_Pedido" IsForeignKey="true" />
       <Association Name="TB_Producto_TB_DetallePedido" Member="TB_Producto" ThisKey="Fk_eProducto" OtherKey="Pk_eProducto" Type="TB_Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ubigeo" Member="Ubigeo">
+    <Type Name="Ubigeo">
+      <Column Name="codDepartamento" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codProvincia" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="codDistrito" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="departamento" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="provincia" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="distrito" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

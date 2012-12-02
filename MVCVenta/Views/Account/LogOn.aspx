@@ -11,10 +11,10 @@
     </p>
 
     <% using (Html.BeginForm()) { %>
-        <%: Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.") %>
+        <%: Html.ValidationSummary(true, "El logeo fue insatisfactorio. Por favor corrija los errores y trate de nuevo.") %>
         <div>
             <fieldset>
-                <legend>Account Information</legend>
+                <legend>Información de cuenta</legend>
                 
                 <div class="editor-label">
                     <%: Html.LabelFor(m => m.UserName) %>

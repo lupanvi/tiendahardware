@@ -18,6 +18,8 @@ namespace MVCVenta.ViewModels
 
         public decimal TotalProducto { get; set; }
 
+        public decimal Peso { get; set; }
+
         public CarritoCompra(int idproducto, string descripcionproducto, decimal precioproducto, int cantproducto, decimal totalproducto)
         {
             this.IdProducto = idproducto; this.DescripcionProducto = descripcionproducto;

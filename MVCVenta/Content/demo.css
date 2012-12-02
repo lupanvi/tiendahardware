@@ -28,7 +28,7 @@
 
 #slides{
 	/* This is the slide area */
-	height:362px;
+	height:400px;
 	
 	/* jQuery changes the width later on to the sum of the widths of all the slides. */
 	width:920px;

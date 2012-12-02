@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://implement.service.com.banco/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://service.com.banco/" name="NroCuentaServiceImplService" targetNamespace="http://implement.service.com.banco/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://service.com.banco/" location="http://localhost:8080/webServiceBanco/NrocuentaService?wsdl=NroCuentaService.wsdl" />
+  <wsdl:types />
+  <wsdl:binding name="NroCuentaServiceImplServiceSoapBinding" type="ns1:NroCuentaService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerTransaccion">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerTransaccion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerTransaccionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NroCuentaServiceImplService">
+    <wsdl:port name="NroCuentaServiceImplPort" binding="tns:NroCuentaServiceImplServiceSoapBinding">
+      <soap:address location="http://localhost:8080/webServiceBanco/NrocuentaService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -46,9 +46,24 @@
                 </div>
             
             <br />
+
+
+            
+            <% if (ViewData["CostoEnvio"] != null)
+               { %>
+                <div class="editor-label">
+                Costo Envio :  <%= String.Format("{0:c}", ViewData["CostoEnvio"])%>
+                </div>
+
+            <% }%>
+
+             <br />
+
             <div class="editor-label">
                 Monto Total :  <%= String.Format("{0:c}", ViewData["MontoCarrito"])%>
             </div>
+
+
             <div class="editor-label">
              <%-- <%: Html.TextBoxFor(model => model.MontoTotal) %>
                 <%: Html.ValidationMessageFor(model => model.MontoTotal)%>--%>
