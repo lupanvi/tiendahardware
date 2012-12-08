@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MVCVenta.Models;
 using MVCVenta.ViewModels;
+using System.Messaging;
+using System.Net.Mail;
 
 namespace MVCVenta.Controllers
 {
@@ -151,8 +153,6 @@ namespace MVCVenta.Controllers
              Transaccion objTransaccion = new Transaccion();
              objTransaccion = (Transaccion)Session["Transaccion"];
 
-
-            //    Decimal dMonto = listaCarritoCompras.Sum(P => P.CantProducto * P.PrecioProducto);
                 Decimal dMonto = listaCarritoCompras.Sum(P => P.TotalProducto);
                 //Guardar en base de datos
                 WsBanco.NroCuentaServiceClient oWsBancoJava = new WsBanco.NroCuentaServiceClient();
@@ -189,19 +189,115 @@ namespace MVCVenta.Controllers
                         _data.SubmitChanges();
 
                     }
+
+
+                    //Message QUEUE
+                    //Insertar en cola - Message Queue
+                    string rutaColaR = @".\private$\Ventas";
+                    if (!MessageQueue.Exists(rutaColaR))
+                        MessageQueue.Create(rutaColaR);
+                    MessageQueue colaR = new MessageQueue(rutaColaR);
+                    Message mensajeR = new Message();
+                    mensajeR.Label = "Venta001";
+                   // mensajeR.Body = new Transaccion() { IdCliente = 1, NombreCliente = "Lucho Cuellar", NumeroTarjeta = "20412222111", TipoPago = "S", MontoTotal = 700 };
+                    mensajeR.Body = new Transaccion() { CodigoTarjeta=objTransaccion.CodigoTarjeta, CodigoTransaccion= objTransaccion.CodigoTransaccion, IdCliente= objTransaccion.IdCliente, MontoTotal= objTransaccion.MontoTotal, NombreCliente= objTransaccion.NombreCliente, NumeroTarjeta= objTransaccion.NumeroTarjeta, TipoPago= objTransaccion.TipoPago};
+                    colaR.Send(mensajeR);
+
+                    //Leer el objeto insertado en cola
+                    string rutaColaL = @".\private$\Ventas";
+                    if (!MessageQueue.Exists(rutaColaL))
+                        MessageQueue.Create(rutaColaL);
+                    MessageQueue colaL = new MessageQueue(rutaColaL);
+                    colaL.Formatter = new XmlMessageFormatter(new Type[] { typeof(Transaccion) });
+                    Message mensajeL = colaL.Receive(); //new Message();
+                    Transaccion otransCola = (Transaccion)mensajeL.Body;
+                    //Message QUEUE
+
+
+                    ////Limpiar
+                    //Session["Carrito"] = null;
+                    //Session["Transaccion"] = objTransaccion;
+                    //ViewData["Cod.Transaccion"] = objTransaccion.CodigoTransaccion;
+
                     //Limpiar
-                    Session["Carrito"] = null;
-                    Session["Transaccion"] = objTransaccion;
-                    ViewData["Cod.Transaccion"] = objTransaccion.CodigoTransaccion;
-                   // ViewData["Message"] = string.Format("La compra se realizo correctamente, El Monto total fue de : {0}", String.Format("{0:c}",dMonto));
+                    //Session["Carrito"] = null;
+                    Session["Transaccion"] = otransCola;
+                    ViewData["Cod.Transaccion"] = otransCola.CodigoTransaccion;
+                   
                     ViewData["Message"] = string.Format("La compra se realizo correctamente, El Monto total fue de : {0}", String.Format("{0:c}", Session["MontoCarritoTotal"]));
                    
+                 
+                    //Enviar Correo
 
+                    //MailMessage mailObj = new MailMessage(txtFrom.Text, txtTo.Text, txtSubject.Text, txtBody.Text); SmtpClient SMTPServer = new SmtpClient("localhost"); try { SMTPServer.Send(mailObj); }
+                    //catch (Exception ex) { }
+
+                    //MailMessage mailObj = new MailMessage("luiscarlosx@gmail.com", "luiscarlosx@gmail.com", "Compra Articulos Computo", "Buenos dias su compra fue satisfactoria"); SmtpClient SMTPServer = new SmtpClient("smtp.gmail.com"); try { SMTPServer.Send(mailObj); }
+                    //catch (Exception ex) { }
+
+                    MailMessage MyMailMessage = new MailMessage();
+
+                    MyMailMessage.From = new MailAddress("luiscarlosx@gmail.com");
+
+                    MyMailMessage.To.Add("luiscarlosx@gmail.com");
+
+                    MyMailMessage.Subject = "Compra Articulos de Computo";
+
+                    MyMailMessage.IsBodyHtml = true;
+
+                    string MensajeCorreo = string.Empty;
+
+                    MensajeCorreo = string.Format( "<table><tr><td> Sr(a) : {0} </td></tr> ",otransCola.NombreCliente);
+
+                    MensajeCorreo += "<tr><td> Los Articulos comprados fueron :  </td></tr>";
+
+                    for (int i = 0; i < listaCarritoCompras.Count; i++)
+                    {
+                     
+                        MensajeCorreo += string.Format("<tr><td> {0} - {1}  </td></tr>", listaCarritoCompras[i].CantProducto, listaCarritoCompras[i].DescripcionProducto);
+
+                    }
+
+                    MensajeCorreo += string.Format("<tr><td>El total es de : {0} </td></tr>", String.Format("{0:c}", Session["MontoCarritoTotal"]));
+                    MensajeCorreo += "</table>";
+
+
+                   // MyMailMessage.Body = "<table><tr><td>" + txtName.Text + txtEmail.Text + txtComments.Text + "</table></tr></td>";
+                   // MyMailMessage.Body = "<table><tr><td>Tu compra fue un exito </tr></td></table>";
+                    MyMailMessage.Body = MensajeCorreo;
+
+                    SmtpClient SMTPServer = new SmtpClient("smtp.gmail.com");
+
+                    SMTPServer.Port = 587;
+
+                   // SMTPServer.Credentials = new System.Net.NetworkCredential("cadbuaryguy@gmail.com", System.Configuration.ConfigurationSettings.AppSettings["pwd"].ToString());
+                    SMTPServer.Credentials = new System.Net.NetworkCredential("luiscarlosx@gmail.com", "esquivel");
+
+                    SMTPServer.EnableSsl = true;
+
+                    try
+                    {
+
+                        SMTPServer.Send(MyMailMessage);
+
+                       // Response.Redirect("Thankyou.aspx");
+
+                    }
+
+                    catch (Exception ex)
+                    {
+
+                     }
+
+                    //smtp.gmail.com
+
+                    //Limpiar Carrito
+                    Session["Carrito"] = null;
 
                 }
                 else
                 {
-                    ViewData["Message"] = "Ocurrió un erro en la transacción.";
+                    ViewData["Message"] = "Ocurrió un error en la transacción.";
                 }
     
                 return View();
